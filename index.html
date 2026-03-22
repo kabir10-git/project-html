@@ -1,38 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome | Apple Store</title>
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Store - Official Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🍎 Sasto Store</div>
+            <ul class="nav-links">
+                <li><a href="#iphone">iPhone</a></li>
+                <li><a href="#mac">Mac</a></li>
+                <li><a href="#watch">Watch</a></li>
+                <li><a href="#coming-soon">Coming Soon</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
 
-<!-- Navbar -->
-<nav>
-    <div class="logo">
-        <a href="#"><i class='bx bxl-apple'></i></a>
+    <!-- Hero Section -->
+    <header class="header">
+        <div class="apple-logo">🍎</div>
+        <div class="hero-text">
+            <h1>Welcome to Sasto Store</h1>
+            <p>Discover the latest innovations from Apple</p>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products-section">
+
+        <!-- iPhone -->
+        <div id="iphone" class="category">
+            <h3 class="section-subtitle">iPhone</h3>
+            <div class="products-grid">
+                <div class="product-card" data-product='{"name":"iPhone 16 Pro Max","price":1299,"image":"📱"}'>
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <div class="product-title">iPhone 16 Pro Max</div>
+                        <div class="product-price">$1,299</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product='{"name":"iPhone 16 Pro","price":999,"image":"📱"}'>
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <div class="product-title">iPhone 16 Pro</div>
+                        <div class="product-price">$999</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product='{"name":"iPhone 16","price":799,"image":"📱"}'>
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <div class="product-title">iPhone 16</div>
+                        <div class="product-price">$799</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mac -->
+        <div id="mac" class="category">
+            <h3 class="section-subtitle">Mac</h3>
+            <div class="products-grid">
+                <div class="product-card" data-product='{"name":"MacBook Pro 16 M3 Max","price":3499,"image":"💻"}'>
+                    <div class="product-image">💻</div>
+                    <div class="product-info">
+                        <div class="product-title">MacBook Pro 16" M3 Max</div>
+                        <div class="product-price">$3,499</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product='{"name":"MacBook Pro 14 M3 Pro","price":1999,"image":"💻"}'>
+                    <div class="product-image">💻</div>
+                    <div class="product-info">
+                        <div class="product-title">MacBook Pro 14" M3 Pro</div>
+                        <div class="product-price">$1,999</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product='{"name":"MacBook Air M2","price":999,"image":"💻"}'>
+                    <div class="product-image">💻</div>
+                    <div class="product-info">
+                        <div class="product-title">MacBook Air M2</div>
+                        <div class="product-price">$999</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product='{"name":"iMac M3","price":1299,"image":"🖥️"}'>
+                    <div class="product-image">🖥️</div>
+                    <div class="product-info">
+                        <div class="product-title">iMac M3</div>
+                        <div class="product-price">$1,299</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch -->
+        <div id="watch" class="category">
+            <h3 class="section-subtitle">Apple Watch</h3>
+            <div class="products-grid">
+                <div class="product-card" data-product='{"name":"Apple Watch Ultra 2","price":799,"image":"⌚"}'>
+                    <div class="product-image">⌚</div>
+                    <div class="product-info">
+                        <div class="product-title">Apple Watch Ultra 2</div>
+                        <div class="product-price">$799</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product='{"name":"Apple Watch Series 10","price":399,"image":"⌚"}'>
+                    <div class="product-image">⌚</div>
+                    <div class="product-info">
+                        <div class="product-title">Apple Watch Series 10</div>
+                        <div class="product-price">$399</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product='{"name":"Apple Watch SE","price":249,"image":"⌚"}'>
+                    <div class="product-image">⌚</div>
+                    <div class="product-info">
+                        <div class="product-title">Apple Watch SE</div>
+                        <div class="product-price">$249</div>
+                        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon" id="coming-soon">
+        <h2 class="section-title">Coming Soon</h2>
+        <div class="products-grid">
+            <div class="product-card coming-soon-card">
+                <div class="product-image" style="font-size: 5rem;">🔮</div>
+                <div class="product-info">
+                    <div class="product-title">iPhone 17 Pro Max</div>
+                    <div class="product-price">Expected: Sep 2025</div>
+                    <button class="add-to-cart" disabled>Coming Soon</button>
+                </div>
+            </div>
+            <div class="product-card coming-soon-card">
+                <div class="product-image" style="font-size: 5rem;">🔮</div>
+                <div class="product-info">
+                    <div class="product-title">MacBook Pro M4</div>
+                    <div class="product-price">Expected: Oct 2025</div>
+                    <button class="add-to-cart" disabled>Coming Soon</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section" id="support">
+        <h2 class="section-title">Support</h2>
+        <div class="support-grid">
+            <div class="support-item">
+                <i class="fas fa-phone"></i>
+                <h3>Customer Care</h3>
+                <p>9761082425</p>
+            </div>
+            <div class="support-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Support</h3>
+                <p>sastostore@applestore.com</p>
+            </div>
+            <div class="support-item">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 Support</h3>
+                <p>Available all day, everyday</p>
+            </div>
+            <div class="support-item">
+                <i class="fas fa-headset"></i>
+                <h3>Live Chat</h3>
+                <p>Chat with our experts now</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+                <div class="total-price">Total: $<span id="totalAmount">0</span></div>
+                <button class="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
     </div>
-    <ul>
-        <li><a href="#">Store</a></li>
-        <li><a href="#">iPhone</a></li>
-        <li><a href="#">Mac</a></li>
-        <li><a href="#">Watch</a></li>
-        <li><a href="#">Support</a></li>
-    </ul>
-</nav>
 
-<!-- Welcome Section -->
-<section class="welcome-section">
-    <img src="apple.jpg" alt="Apple Logo">
-    <div class="welcome-text">Welcome to our Apple Store</div>
-</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Shop and Learn</h3>
+                <a href="#">Store</a>
+                <a href="#">Mac</a>
+                <a href="#">iPad</a>
+                <a href="#">iPhone</a>
+                <a href="#">Watch</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#">Apple Music</a>
+                <a href="#">Apple TV+</a>
+                <a href="#">Apple Fitness+</a>
+                <a href="#">Apple Arcade</a>
+            </div>
+            <div class="footer-section">
+                <h3>Apple Store</h3>
+                <a href="#">Find a Store</a>
+                <a href="#">Genius Bar</a>
+                <a href="#">Today at Apple</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Apple Store. All rights reserved.</p>
+        </div>
+    </footer>
 
-<footer>
-    © 2026 Apple Store | Designed by Abhishek
-</footer>
+    <!-- Group Credit -->
+    <div class="group-credit">
+        <p>🎓 Group Project - BSC CSIT 1st Semester<br>Kabir • Abhishek • Pratik • Prashant</p>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
